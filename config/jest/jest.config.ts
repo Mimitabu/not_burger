@@ -4,6 +4,7 @@
  */
 
 import type { Config } from '@jest/types';
+import path from 'path';
 
 const config: Config.InitialOptions = {
     // All imported modules in your tests should be mocked automatically
@@ -24,6 +25,7 @@ const config: Config.InitialOptions = {
     moduleDirectories: [
         'node_modules',
     ],
+    "modulePaths": ['<rootDir>/src'],
     moduleFileExtensions: [
         'js',
         'mjs',
@@ -47,7 +49,14 @@ const config: Config.InitialOptions = {
     // Use ts-jest to transform TypeScript files
     preset: 'ts-jest',
     transform: {
-        '^.+\\.(ts|tsx)$': 'ts-jest',
+        '^.+\\.(ts|tsx)$': ['ts-jest', {
+            tsconfig: path.resolve(__dirname, '../../tsconfig.test.json')
+        }],
+    },
+    setupFilesAfterEnv: ['<rootDir>config/jest/setupJest.ts'],
+    moduleNameMapper: {
+        '\\.(css|scss|sass)$': 'identity-obj-proxy',
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     },
 
     // Indicates whether the coverage information should be collected while executing the test
@@ -103,7 +112,7 @@ const config: Config.InitialOptions = {
     // An array of file extensions your modules use
 
     // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-    // moduleNameMapper: {},
+    
 
     // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
     // modulePathIgnorePatterns: [],
