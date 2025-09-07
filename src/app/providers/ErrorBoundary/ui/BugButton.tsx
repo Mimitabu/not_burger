@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from 'shared/ui/Button/Button';
 
-// компонент для тестирования ошибок 
+// компонент для тестирования ошибок
 export const BugButton = () => {
     const [error, setError] = useState(false);
 
@@ -19,5 +19,3 @@ export const BugButton = () => {
         </Button>
     );
 };
-
-

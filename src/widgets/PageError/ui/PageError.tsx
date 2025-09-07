@@ -7,6 +7,7 @@ export const PageError = () => {
     const { t } = useTranslation();
 
     const handleReload = () => {
+        // eslint-disable-next-line no-restricted-globals
         location.reload();
     };
 
@@ -21,5 +22,3 @@ export const PageError = () => {
         </div>
     );
 };
-
-
