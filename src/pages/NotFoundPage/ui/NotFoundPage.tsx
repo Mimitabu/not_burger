@@ -10,4 +10,4 @@ export const NotFoundPage = () => {
             {t('Page not found')}
         </div>
     );
-}; 
+};

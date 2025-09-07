@@ -2,5 +2,7 @@
     "Test expample":"Test expample",
     "Translate": "Translate",
     "Main page":"MAIN PAGE",
-    "Page not found": "PAGE NOT FOUND"
+    "Page not found": "PAGE NOT FOUND",
+    "An error occurred, please reload the page.": "An error occurred, please reload the page.",
+    "Refresh": "Refresh"
 }
